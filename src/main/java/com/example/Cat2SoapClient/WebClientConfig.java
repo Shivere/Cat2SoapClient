@@ -11,14 +11,14 @@ public class WebClientConfig {
     public Jaxb2Marshaller marshaller(){
         Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
         //Note! this package must match the package in the <generatePackage>
-        marshaller.setContextPath("localhost._8080.movies");
+        marshaller.setContextPath("localhost.movies");
         return marshaller;
     }
 
     @Bean
     public Client quoteClient(Jaxb2Marshaller marshaller) {
         Client client = new Client();
-        client.setDefaultUri("http://localhost:8080/movies");
+        client.setDefaultUri("http://localhost/movies");
         client.setMarshaller(marshaller);
         client.setUnmarshaller(marshaller);
         return client;

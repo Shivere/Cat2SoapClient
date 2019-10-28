@@ -1,7 +1,7 @@
 package com.example.Cat2SoapClient;
 
-import localhost._8080.movies.GetMovieResponse;
-import localhost._8080.movies.Movie;
+import localhost.movies.GetMovieResponse;
+import localhost.movies.Movie;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,18 +18,16 @@ public class Cat2SoapClientApplication {
 	CommandLineRunner lookup(Client movieClient){
 
 		return args -> {
-			String moviename = "Spiderman: Far from home";
+			String name = "The Boys";
 			if(args.length>0){
-				moviename = args[0];
+				name = args[0];
 			}
 
-			GetMovieResponse response = movieClient.getMovieResponse(moviename);
+			GetMovieResponse response = movieClient.getMovieResponse(name);
 			Movie movie = response.getMovie();
 			System.err.println(
 					"Movie Name: "+movie.getName()+
-							"\n Movie's Actor(s): "+movie.getActor()+
-							"\n Movie's Capital: "+movie.getCapital()+
-							"\n Movie's Category: "+movie.getCategory()+
+							"\n Movie's genre: "+movie.getGenre()+
 							"\n Year Released: "+movie.getYearReleased()
 			);
 		};
