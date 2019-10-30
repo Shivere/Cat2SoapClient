@@ -12,7 +12,7 @@ public class Client extends WebServiceGatewaySupport {
         request.setName(movieName);
 
         GetMovieResponse response = (GetMovieResponse) getWebServiceTemplate()
-                .marshalSendAndReceive("http://localhost:8080/ws",
+                .marshalSendAndReceive("http://localhost:9001/ws",
                         request,
                         new SoapActionCallback("http://localhost/movies"));
 

@@ -18,7 +18,7 @@ public class Cat2SoapClientApplication {
 	CommandLineRunner lookup(Client movieClient){
 
 		return args -> {
-			String name = "The Boys";
+			String name = "Avatar";
 			if(args.length>0){
 				name = args[0];
 			}
